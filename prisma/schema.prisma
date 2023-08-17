@@ -22,9 +22,9 @@ model Train {
 model Conductor {
   id Int @id @default(autoincrement())
   name String @db.VarChar(255)
-  yearHired DateTime
-  train Train @relation(fields: [trainId], references: [id])
+  yearHired Int
   trainId Int
+  train Train @relation(fields: [trainId], references: [id])
 }
 
 model Station {
