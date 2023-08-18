@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 const PORT = 3005;
 
+//Middleware to format body into JSON
 app.use(require("body-parser").json());
+
+//Middleware for logging
 app.use(require("morgan")('dev'));
 
 app.get("/", (req, res) => {
