@@ -92,6 +92,17 @@ const main = async () => {
       capacity: 1500,
     },
   });
+
+  //create Users
+  await prisma.user.create({
+    data: {
+      firstName: "Jean-Luc",
+      lastName: "Picard",
+      username: "captainP",
+      password: "3arlGreyH0t"
+    }
+  });
+
 };
 
 main();
