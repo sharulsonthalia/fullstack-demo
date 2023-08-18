@@ -68,7 +68,7 @@ router.get("/me", async (req, res) => {
       res.send({ message: "User Not Found" });
     }
   } catch (error) {
-    res.send(error.message);
+    res.send({message: error.message});
   }
 });
 

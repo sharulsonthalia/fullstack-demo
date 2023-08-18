@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = 3005;
 const jwt = require("jsonwebtoken");
+const path = require("path");
 require("dotenv").config();
+
 
 //Middleware to format body into JSON
 app.use(require("body-parser").json());
@@ -25,8 +27,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(path.join(__dirname, "..", "client/dist")));
+
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World</h1> Choo Choo!");
+  res.sendFile(path.join(__dirname, "..", "client/dist/index.html"));
 });
 
 app.use("/api", require("./api"));
