@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 router.get("/", (req, res) => {
   res.send("You have reached the auth router");
@@ -19,8 +20,9 @@ router.post("/register", async (req, res) => {
     });
 
     if (result) {
-      //TODO return jwt token
-      res.send(result);
+      const token = jwt.sign({ id: result.id}, process.env.JWT); 
+
+      res.status(201).send({token});
     } else {
       res.send({ message: "Could not add User" });
     }

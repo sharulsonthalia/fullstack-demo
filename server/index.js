@@ -1,7 +1,7 @@
 const express = require("express");
-
 const app = express();
 const PORT = 3005;
+require('dotenv').config();
 
 //Middleware to format body into JSON
 app.use(require("body-parser").json());
