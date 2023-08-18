@@ -14,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", require("./api"));
+app.use("/auth", require("./auth"));
 
 app.listen(PORT, (err) => {
   if (!err) {
