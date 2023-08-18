@@ -6,7 +6,7 @@
   "scripts": {
     "server": "node ./server/index.js",
     "server:dev": "nodemon ./server/index.js",
-    "seed": "npx prisma migrate reset"
+    "seed": "npx prisma migrate reset "
   },
   "prisma":{
     "seed": "node ./prisma/seed.js"
