@@ -4,7 +4,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 //Returns all the trains (with their conductors)
-router.get("/", async (req, res) => {
+router.get("/", requireUser, async (req, res) => {
   try {
     const trains = await prisma.train.findMany({
       include: {
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 //Returns a train with specified id
-router.get("/:id", async (req, res) => {
+router.get("/:id", requireUser, async (req, res) => {
   try {
     const train = await prisma.train.findUnique({
       where: {
