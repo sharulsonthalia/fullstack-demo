@@ -2,6 +2,22 @@
 
 Classroom Manager is an SPA that allows users to effectively manage data relating to trains. Once a user has successfully registered for an account and logged in, they will be given access to a platform that allows them to see trains, add new trains, update existing trains, and remove trains.
 
+# Setup
+
+## Install
+To install npm pacakges: `npm run install:all`
+
+## .env
+Create a .env file inside the `server` folder with the following variables:  
+`DATABASE_URL` containing the postgress database connection string to your local database  
+`JWT` containing the secret string for creating Json Web Tokens
+
+## Create and Seed Database
+`npm run seed` will run the prisma migrations as well as `server/seed.js` to populate the database with initial data.
+
+## During development
+Use `npm run dev` during development to start a development server for the client. Changes to file will be watched and server will automatically restart when changes are made.
+
 
 # 34B WorkshopL Authentication & OAuth
 
