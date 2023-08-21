@@ -16,7 +16,7 @@ Create a .env file inside the `server` folder with the following variables:
 `npm run seed` will run the prisma migrations as well as `server/seed.js` to populate the database with initial data.
 
 ## During development
-Use `npm run dev` during development to start a development server for the client. Changes to file will be watched and server will automatically restart when changes are made.
+Use `npm run dev` during development to start a development server for the client. This uses an npm package called `concurrently` to simultaneosly run the client and the server on your local machine. Changes to files will be watched and the server will automatically restart when changes are made.
 
 
 # 34B WorkshopL Authentication & OAuth
