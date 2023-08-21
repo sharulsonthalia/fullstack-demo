@@ -2,7 +2,8 @@ import { useState } from "react";
 import Trains from "./components/Trains";
 import AuthForm from "./components/AuthForm";
 function App() {
-  const [token, setToken] = useState(false);
+
+  const [token, setToken] = useState(null);
 
   return (
     <>

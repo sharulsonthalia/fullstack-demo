@@ -4,6 +4,7 @@ const Trains = ({ token }) => {
   const [trains, setTrains] = useState([]);
 
   useEffect(() => {
+    
     const fetchTrains = async () => {
       const result = await fetch("/api/trains", {
         headers: {
@@ -13,6 +14,7 @@ const Trains = ({ token }) => {
       const data = await result.json();
       setTrains(data);
     };
+
     fetchTrains();
   }, []);
 
