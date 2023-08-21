@@ -19,7 +19,7 @@ Create a .env file inside the `server` folder with the following variables:
 Use `npm run dev` during development to start a development server for the client. This uses an npm package called `concurrently` to simultaneosly run the client and the server on your local machine. Changes to files will be watched and the server will automatically restart when changes are made.
 
 
-# 34B WorkshopL Authentication & OAuth
+# 34B Workshop: Authentication & OAuth
 
 _Add_ the option for users to authenticate via Github OAuth. They should still have the ability to register and login with a username and password.
 
